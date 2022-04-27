@@ -1,0 +1,11 @@
+[Unit]
+Description= MQTT and GPIO output service for MoOde
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/pi/mqtt_gpio.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
