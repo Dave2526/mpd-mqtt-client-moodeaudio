@@ -122,7 +122,5 @@ while True:
             mqtt_client.publish(mqtt_topic+'/state/title', str(title))
             l_title = title
 
-
-
     
     time.sleep(0.2)
