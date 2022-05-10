@@ -24,8 +24,10 @@ def wlan_verb():
 
 
 mqtt_client = mqtt.Client()
+mqtt_client.will_set(mqtt_topic+'/lwt', 'Offline', retain=True)
 mqtt_client.connect('localhost')
 mqtt_client.loop_start()
+mqtt_client.publish(mqtt_topic+"/lwt", "Online")
 
 while True:
     wlan_ok = wlan_verb()
